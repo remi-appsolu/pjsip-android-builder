@@ -32,6 +32,13 @@ You can install everything on your local machine, or (the way I do) use an Ubunt
 docker run -it --name pjsip-builder -v $HOME/AndroidStudioProjects/pjsip-android-builder:/home ubuntu bash
 ```
 
+To reattach : 
+```bash
+    docker ps -a # to find the container id
+    docker start [ID]
+    docket attach [ID]
+```
+
 ### Configuration
 
 1. Clone this repo on your machine or in the mounted volume inside your container.
