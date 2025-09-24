@@ -27,10 +27,10 @@ then
     # Setup Java 8
     apt-get update
     apt-get purge -y openjdk*
-    apt-get install -y openjdk-8-jdk
+    apt-get install -y openjdk-21-jdk
 
     DEPS="unzip git curl bzip2 binutils make autoconf openssl \
-          libssl-dev libopus0 libpcre3 libpcre3-dev build-essential nasm python" 
+          libssl-dev libopus0 libpcre3 libpcre3-dev build-essential nasm python3 libpcre2-dev"
     sh -c "dpkg --add-architecture i386; apt-get update && apt-get -y upgrade && apt-get install -y ${DEPS}"
 fi
 
@@ -235,7 +235,9 @@ then
     echo "Extracting Opus ..."
     tar xzf opus.tar.gz && rm -rf opus.tar.gz
     cd ${BASEDIR}
-    ./opus-build || true
+    echo "Comppiling Opus ..."
+    ./opus-build #|| true
+    echo "Comppiled Opus ..."
 fi
 
 if [ "${DOWNLOAD_BCG729}" == "1" ]

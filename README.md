@@ -29,7 +29,7 @@ Checkout tag `2.2.0` to build older pjsip (or other libs) versions.
 You can install everything on your local machine, or (the way I do) use an Ubuntu Docker container and mount an external volume with this repo. E.g.:
 
 ```bash
-docker run -it --name pjsip-builder -v /path/to/host/repo:/home ubuntu bash
+docker run -it --name pjsip-builder -v $HOME/AndroidStudioProjects/pjsip-android-builder:/home ubuntu bash
 ```
 
 ### Configuration

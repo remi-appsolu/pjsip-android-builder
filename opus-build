@@ -14,13 +14,16 @@ rm -rf "${OPUS_BUILD_OUT_PATH}"
 mkdir -p "${LIB_PATH}"
 mkdir -p "${LOG_PATH}"
 
+OPUS_ANDROID_MK_URL="https://trac.pjsip.org/repos/raw-attachment/ticket/1904/Android.mk"
 
 cd $OPUS_PATH
 
 # Download Android.mk
 echo "Downloading Android.mk file from PjSip website ..."
 mkdir -p jni
-(cd jni && curl -O https://trac.pjsip.org/repos/raw-attachment/ticket/1904/Android.mk)
+#(cd jni && curl -O "$OPUS_ANDROID_MK_URL")
+cd jni
+cp ../../../opus-Android.mk Android.mk
 
 # Build Opus
 echo "Building Opus $OPUS_VERSION ..."
